@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0, user-scalable=no">
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/handpose"></script>
+
+<body>
+  <div id="canvas-wrapper" style="visibility: hidden;">
+    <canvas id="output"></canvas>
+    <video id="video" playsinline style="display: none;"></video>
+  </div>
+
+  <div id="loading" style="position: fixed; top: 0; left: 0; display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh; z-index: 99999">
+    <img id="setting_gear_image" style="width: 70px; height: auto; opacity: 50%;" src="{{url_for('static', filename='img/gear.gif')}}" />
+    <span id="setting_gear_text" style="color: gray;">Loading models...</span>
+  </div>
+
+  <script type="text/javascript" src="{{ url_for('static', filename='handtrack.min.js') }}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.7/dat.gui.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/stats.js@0.17.0/build/stats.min.js"></script>
+  <script type="module" src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
